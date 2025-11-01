@@ -1,0 +1,26 @@
+{
+  "name": "math",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AGAFONOV73/Math-logtrig-.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AGAFONOV73/Math-logtrig-/issues"
+  },
+  "homepage": "https://github.com/AGAFONOV73/Math-logtrig-#readme",
+  "devDependencies": {
+    "eslint": "^9.38.0",
+    "jest": "^30.2.0"
+  }
+}
