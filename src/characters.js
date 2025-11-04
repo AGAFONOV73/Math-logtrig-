@@ -20,7 +20,7 @@ class Character {
     this._attack = value;
   }
 
-  getEffectiveAttack(distance) {
+  getAttack(distance) {
     if (distance < 1) {
       throw new Error("Distance must be at least 1");
     }

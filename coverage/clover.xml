@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1761924077300" clover="3.2.0">
-  <project timestamp="1761924077300" name="All files">
+<coverage generated="1762253297525" clover="3.2.0">
+  <project timestamp="1762253297525" name="All files">
     <metrics statements="18" coveredstatements="17" conditionals="4" coveredconditionals="4" methods="8" coveredmethods="7" elements="30" coveredelements="28" complexity="0" loc="18" ncloc="18" packages="1" files="1" classes="1"/>
     <file name="characters.js" path="C:\Users\Master\Desktop\FRONT\Math (logtrig)\src\characters.js">
       <metrics statements="18" coveredstatements="17" conditionals="4" coveredconditionals="4" methods="8" coveredmethods="7"/>
