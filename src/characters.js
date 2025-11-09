@@ -1,7 +1,8 @@
 class Character {
   constructor() {
     this._stoned = false;
-    this._attack = 0;
+    this._baseAttack = 0;
+    this._distance = 1;
   }
 
   get stoned() {
@@ -13,23 +14,32 @@ class Character {
   }
 
   get attack() {
-    return this._attack;
+    return this.getEffectiveAttack(this._distance);
   }
 
   set attack(value) {
-    this._attack = value;
+    this._baseAttack = value;
   }
 
-  getAttack(distance) {
+  set distance(value) {
+    if (value < 1) {
+      throw new Error("Distance must be at least 1");
+    }
+    this._distance = value;
+  }
+
+  getEffectiveAttack(distance = this._distance) {
     if (distance < 1) {
       throw new Error("Distance must be at least 1");
     }
-    const baseMultiplier = Math.max(0, 1 - (distance - 1) * 0.1);
-    let attackValue = this.attack * baseMultiplier;
 
-    if (this.stoned) {
+    const baseMultiplier = Math.max(0, 1 - (distance - 1) * 0.1);
+    let attackValue = this._baseAttack * baseMultiplier;
+
+    if (this._stoned) {
       attackValue -= Math.log2(distance) * 5;
     }
+
     return Math.max(0, attackValue);
   }
 }
@@ -37,15 +47,13 @@ class Character {
 class Magician extends Character {
   constructor() {
     super();
-    this._attack = 100;
+    this._baseAttack = 100;
   }
 }
 
 class Daemon extends Character {
   constructor() {
     super();
-    this._attack = 150;
+    this._baseAttack = 150;
   }
 }
-
-module.exports = { Magician, Daemon };
